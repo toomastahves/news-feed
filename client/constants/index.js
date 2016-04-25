@@ -1,0 +1,5 @@
+export const SERVER_URI = process.env.SERVER_URI || 'http://localhost:3000';
+
+export const GET_HOME_CONTENT_REQUEST = 'GET_HOME_CONTENT_REQUEST';
+export const GET_HOME_CONTENT_SUCCESS = 'GET_HOME_CONTENT_SUCCESS';
+export const GET_HOME_CONTENT_FAILED = 'GET_HOME_CONTENT_FAILED';

@@ -1,0 +1,5 @@
+.header {
+  height: 50px;
+  display: flex;
+  background-color: rgb(54, 165, 244);
+}

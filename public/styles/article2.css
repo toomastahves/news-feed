@@ -1,0 +1,63 @@
+.article {
+  background-color: pink;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.article-title {
+  background-position: center;
+  background-size: cover;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.article-description {
+  background-color: #181818;
+  flex: 1;
+  max-height: 368px;
+}
+
+.article-text {
+
+}
+
+.article-bubble {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-color: #1ba6e2;
+}
+
+@media (min-width: 600px) {
+  .article {
+
+  }
+  .article-title {
+    flex: 2.5;
+  }
+
+  .article-description {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .article-text {
+    flex: 3;
+  }
+
+  .article-bubble {
+    flex: 1;
+    position: static;
+    top:auto;
+    left: auto;
+    width: auto;
+    height: auto;
+  }
+}
