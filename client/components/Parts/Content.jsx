@@ -1,7 +1,10 @@
 import React, { PropTypes } from 'react';
 import Article from './Article';
+import Spinner from './Spinner';
 
-export const Content = ({ articles }) => {
+export const Content = ({ articles, fetching }) => {
+  if(fetching) return <div className='spinner-location overlay'><Spinner /></div>;
+
   return (
     <div className='container'>
       {articles.map((a, number) => {
@@ -12,7 +15,8 @@ export const Content = ({ articles }) => {
 };
 
 Content.propTypes = {
-  articles: PropTypes.array
+  articles: PropTypes.array.isRequired,
+  fetching: PropTypes.bool.isRequired
 };
 
 export default Content;

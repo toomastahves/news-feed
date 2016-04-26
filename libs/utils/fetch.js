@@ -3,6 +3,7 @@ import { API_URI } from '../../client/constants/api';
 export const fetch = ({ path, type, data }) => {
   const url = `${API_URI}${path}`;
   console.log(`${type} ${url}`);
+
   return new Promise((resolve, reject) => {
     let req = new XMLHttpRequest();
 

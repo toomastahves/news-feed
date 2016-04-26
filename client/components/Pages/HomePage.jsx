@@ -5,10 +5,11 @@ import Header from '../Parts/Header';
 import Front from '../Parts/Front';
 import Content from '../Parts/Content';
 
-export const HomePage = ({ articles }) => {
+export const HomePage = ({ articles, fetching }) => {
   return (
     <div>
-      <Content articles={articles} />
+      <Header />
+      <Content articles={articles} fetching={fetching} />
     </div>
   );
 };
@@ -19,7 +20,8 @@ HomePage.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    articles: state.apiReducer.articles
+    articles: state.apiReducer.articles,
+    fetching: state.apiReducer.fetching
   };
 };
 
