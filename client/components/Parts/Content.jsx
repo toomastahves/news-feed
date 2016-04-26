@@ -1,12 +1,12 @@
 import React, { PropTypes } from 'react';
-import Article2 from './Article2';
+import Article from './Article';
 
 export const Content = ({ articles }) => {
   return (
     <div className='container'>
-      <Article2 article={articles[0]} />
-      <Article2 article={articles[1]} />
-      <Article2 article={articles[2]} />
+      <Article article={articles[0]} />
+      <Article article={articles[1]} />
+      <Article article={articles[2]} />
     </div>
   );
 };

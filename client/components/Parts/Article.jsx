@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-export const Article2 = ({ article }) => {
+export const Article = ({ article }) => {
   const style = {
     backgroundImage: `url('${article.url}')`
   };
@@ -15,8 +15,8 @@ export const Article2 = ({ article }) => {
   );
 };
 
-Article2.propTypes = {
+Article.propTypes = {
   article: PropTypes.object
 };
 
-export default Article2;
+export default Article;

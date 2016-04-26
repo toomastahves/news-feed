@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Header from '../Parts/Header';
 import Front from '../Parts/Front';
 import Content from '../Parts/Content';

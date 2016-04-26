@@ -1,10 +1,10 @@
-import { SERVER_URI } from '../../client/constants/';
+import { API_URI } from '../../client/constants/api';
 
 export const fetch = ({ path, type, data }) => {
-  console.log(`${type} ${SERVER_URI}${path}`);
+  console.log(`${type} ${API_URI}${path}`);
   return new Promise((resolve, reject) => {
     const req = new XMLHttpRequest();
-    req.open(type, `${SERVER_URI}${path}`);
+    req.open(type, `${API_URI}${path}`);
     req.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
     req.onload = function() {
       if(req.status === 200) {
