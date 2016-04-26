@@ -3,7 +3,7 @@ import Article from './Article';
 import Spinner from './Spinner';
 
 export const Content = ({ articles, fetching }) => {
-  if(fetching) return <div className='spinner-location overlay'><Spinner /></div>;
+  if(fetching.articles) return <div className='spinner-location overlay'><Spinner /></div>;
 
   return (
     <div className='container'>
@@ -16,7 +16,7 @@ export const Content = ({ articles, fetching }) => {
 
 Content.propTypes = {
   articles: PropTypes.array.isRequired,
-  fetching: PropTypes.bool.isRequired
+  fetching: PropTypes.object.isRequired
 };
 
 export default Content;

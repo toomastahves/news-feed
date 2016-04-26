@@ -1,5 +1,8 @@
 import * as actions from '../constants/api';
 
+/*
+* Get articles list request actions
+*/
 export const getArticlesRequest = (section) => {
   return {
     type: actions.GET_ARTICLES_REQUEST,
@@ -7,7 +10,7 @@ export const getArticlesRequest = (section) => {
   };
 };
 export const getArticlesSuccess = (articles) => {
-  console.log(articles);
+  // console.log(articles);
   const mappedArticles = [];
   for(const a of articles) {
     const mappedArticle = {
@@ -30,6 +33,9 @@ export const getArticlesFailed = (error) => {
   };
 };
 
+/*
+* Get article by id request actions
+*/
 export const getArticleRequest = (id) => {
   return {
     type: actions.GET_ARTICLE_REQUEST,
@@ -45,6 +51,36 @@ export const getArticleSuccess = (article) => {
 export const getArticleFailed = (error) => {
   return {
     type: actions.GET_ARTICLE_FAILED,
+    error
+  };
+};
+
+/*
+* Get sections list request actions
+*/
+export const getSectionsRequest = () => {
+  return {
+    type: actions.GET_SECTIONS_REQUEST
+  };
+};
+export const getSectionsSuccess = (sections) => {
+  const mappedSections = [];
+  for(const s of sections) {
+    const mappedSection = {
+      id: s.id,
+      name: s.name
+    };
+    mappedSections.push(mappedSection);
+  }
+  console.log(mappedSections);
+  return {
+    type: actions.GET_SECTIONS_SUCCESS,
+    sections: mappedSections
+  };
+};
+export const getSectionsFailed = (error) => {
+  return {
+    type: actions.GET_SECTIONS_FAILED,
     error
   };
 };

@@ -1,0 +1,14 @@
+.drawer {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  width: 100px;
+  left: -100px;
+  transition: left 0.4s;
+  z-index: 1;
+  background-color: white;
+}
+
+.drawer-open {
+  left: 0;
+}

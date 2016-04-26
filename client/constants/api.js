@@ -1,4 +1,4 @@
-export const API_URI = process.env.API_URI || 'https://api.postimees.ee/rest/v1';
+export const API_URI = 'https://api.postimees.ee/rest/v1';
 
 export const GET_ARTICLES_REQUEST = 'GET_ARTICLES_REQUEST';
 export const GET_ARTICLES_SUCCESS = 'GET_ARTICLES_SUCCESS';
@@ -7,7 +7,6 @@ export const GET_ARTICLES_FAILED = 'GET_ARTICLES_FAILED';
 export const GET_ARTICLE_REQUEST = 'GET_ARTICLE_REQUEST';
 export const GET_ARTICLE_SUCCESS = 'GET_ARTICLE_SUCCESS';
 export const GET_ARTICLE_FAILED = 'GET_ARTICLE_FAILED';
-
 
 export const GET_SECTIONS_REQUEST = 'GET_SECTIONS_REQUEST';
 export const GET_SECTIONS_SUCCESS = 'GET_SECTIONS_SUCCESS';

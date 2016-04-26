@@ -1,22 +1,30 @@
 .header {
-  position: fixed;
   padding: 5px 10px 0 10px;
   height: 50px;
   display: flex;
   background-color: rgb(54, 165, 244);
   justify-content: space-between;
   width: 100%;
-  z-index: 1;
-  top: 0;
 }
 
 .hamburger {
   cursor: pointer;
   font-size: 1.6em;
   color: white;
+  padding-right: 20px;
 }
 .hamburger:after {
   content: '☰';
+}
+
+.select-section {
+  display: flex;
+  flex-direction: row;
+}
+select {
+  border: none;
+  padding: 10px;
+  background-color: rgb(88, 178, 242);
 }
 
 .logo {

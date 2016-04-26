@@ -17,3 +17,17 @@ function* getArticles(action) {
 export function* watchGetArticles() {
   yield* takeLatest(constants.GET_ARTICLES_REQUEST, getArticles);
 }
+
+function* getSections() {
+  yield delay(1000);
+  try {
+    const result = yield call(fetch, { path: '/sections', type: 'GET' });
+    yield put(actions.getSectionsSuccess(result));
+  } catch(error) {
+    yield put(actions.getSectionsFailed(error));
+  }
+}
+
+export function* watchGetSections() {
+  yield* takeLatest(constants.GET_SECTIONS_REQUEST, getSections);
+}
