@@ -12,7 +12,7 @@ export const HomePage = ({ articles, sections, fetching, dispatch }) => {
   };
   return (
     <div>
-      <Header handleChange={handleChange} sections={sections} fetching={fetching} />
+      {/* <Header handleChange={handleChange} sections={sections} fetching={fetching} /> */}
       <Content sections={sections} articles={articles} fetching={fetching} />
     </div>
   );
@@ -34,7 +34,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   dispatch(getArticlesRequest(123));
-  dispatch(getSectionsRequest());
+  // dispatch(getSectionsRequest());
   return { dispatch };
 };
 

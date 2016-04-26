@@ -22,10 +22,12 @@ export const fetch = ({ path, type, data }) => {
       if(req.status === 200) {
         resolve(JSON.parse(req.response));
       } else {
+        console.log('reject 1');
         reject(JSON.parse(req.response));
       }
     };
     req.onerror = function() {
+      console.log('reject 2');
       reject(JSON.parse({ error: { message: 'Network error' } }));
     };
     req.send(data);

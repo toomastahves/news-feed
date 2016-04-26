@@ -1,10 +1,12 @@
 .article {
   background-color: rgb(140, 138, 143);
-  height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
   animation: fadein 2s;
+  max-width: 1024px;
+  height: 600px;
+  margin: auto;
 }
 
 @keyframes fadein {
@@ -15,7 +17,8 @@
 .article-title {
   background-position: center;
   background-size: cover;
-  flex: 1;
+  opacity: 0.9;
+  flex: 2;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -28,7 +31,6 @@
   font-weight: bold;
   color: white;
   padding: 5%;
-  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .article-description {
@@ -38,11 +40,11 @@
 }
 
 
-.article-text {
+.article-summary {
 
 }
 
-.article-text-style {
+.article-summary-style {
   font-size: 1.4em;
   color: white;
   padding: 5%;
@@ -78,7 +80,7 @@
     flex-direction: row;
   }
 
-  .article-text {
+  .article-summary {
     flex: 3;
   }
 

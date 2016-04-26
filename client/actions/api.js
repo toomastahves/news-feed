@@ -17,7 +17,7 @@ export const getArticlesSuccess = (articles) => {
       id: a.id,
       headline: a.headline,
       articleLead: a.articleLead[0].html,
-      img: a.thumbnail.sources.portrait.large
+      img: a.thumbnail.sources.landscape.large
     };
     mappedArticles.push(mappedArticle);
   }

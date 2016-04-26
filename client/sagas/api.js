@@ -7,13 +7,12 @@ import { fetch, delay } from '../../libs/utils/fetch';
 function* getArticles(action) {
   yield delay(1000);
   try {
-    const result = yield call(fetch, { path: `/sections/${action.section}/articles?limit=2`, type: 'GET' });
+    const result = yield call(fetch, { path: `/sections/${action.section}/articles?limit=5`, type: 'GET' });
     yield put(actions.getArticlesSuccess(result));
   } catch(error) {
     yield put(actions.getArticlesFailed(error));
   }
 }
-
 export function* watchGetArticles() {
   yield* takeLatest(constants.GET_ARTICLES_REQUEST, getArticles);
 }
@@ -27,7 +26,6 @@ function* getSections() {
     yield put(actions.getSectionsFailed(error));
   }
 }
-
 export function* watchGetSections() {
   yield* takeLatest(constants.GET_SECTIONS_REQUEST, getSections);
 }
