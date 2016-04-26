@@ -1,5 +1,36 @@
 .header {
+  position: fixed;
+  padding: 5px 10px 0 10px;
   height: 50px;
   display: flex;
   background-color: rgb(54, 165, 244);
+  justify-content: space-between;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+}
+
+.hamburger {
+  cursor: pointer;
+  font-size: 1.6em;
+  color: white;
+}
+.hamburger:after {
+  content: '☰';
+}
+
+.logo {
+  background-image: url('/img/logo.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 168px;
+  height: 32px;
+}
+
+.share {
+  background-image: url('/img/share.png');
+  width: 33px;
+  height: 36px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
