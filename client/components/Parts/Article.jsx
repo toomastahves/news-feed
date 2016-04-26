@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 export const Article = ({ article }) => {
   const style = {
-    backgroundImage: `url('${article.url}')`
+    backgroundImage: `url('${article.img}')`
   };
   return (
     <div className='article'>

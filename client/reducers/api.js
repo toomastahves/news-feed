@@ -2,7 +2,7 @@ import * as constants from '../constants/api';
 
 const initialState = {
   fetching: false,
-  articles: {},
+  articles: [],
   error: {},
   article: {}
 };

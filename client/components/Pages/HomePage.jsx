@@ -1,27 +1,11 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { getArticlesRequest } from '../../actions/api';
 import Header from '../Parts/Header';
 import Front from '../Parts/Front';
 import Content from '../Parts/Content';
 
-export const HomePage = () => {
-  const article1 = {
-    url: 'img/img1.jpg'
-  };
-  const article2 = {
-    url: 'img/img2.jpg'
-  };
-  const article3 = {
-    url: 'img/img3.jpg'
-  };
-  const articles = [];
-  articles.push(article1);
-  articles.push(article2);
-  articles.push(article3);
-
-  const data = {
-    url: 'img/img.jpg'
-  };
+export const HomePage = ({ articles }) => {
   return (
     <div>
       <Content articles={articles} />
@@ -29,4 +13,19 @@ export const HomePage = () => {
   );
 };
 
-export default HomePage;
+HomePage.propTypes = {
+  articles: PropTypes.array.isRequired
+};
+
+const mapStateToProps = (state) => {
+  return {
+    articles: state.apiReducer.articles
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  dispatch(getArticlesRequest(123));
+  return { dispatch };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

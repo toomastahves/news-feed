@@ -7,9 +7,20 @@ export const getArticlesRequest = (section) => {
   };
 };
 export const getArticlesSuccess = (articles) => {
+  console.log(articles);
+  const mappedArticles = [];
+  for(const a of articles) {
+    const mappedArticle = {
+      id: a.id,
+      headline: a.headline,
+      articleLead: a.articleLead[0].html,
+      img: a.thumbnail.sources.portrait.large
+    };
+    mappedArticles.push(mappedArticle);
+  }
   return {
     type: actions.GET_ARTICLES_SUCCESS,
-    articles
+    articles: mappedArticles
   };
 };
 export const getArticlesFailed = (error) => {

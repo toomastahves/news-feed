@@ -4,10 +4,10 @@ import * as actions from '../actions/api';
 import * as constants from '../constants/api';
 import { fetch, delay } from '../../libs/utils/fetch';
 
-function* getArticles(section) {
+function* getArticles(action) {
   yield delay(1000);
   try {
-    const result = yield call(fetch, { path: `/sections/${section}/articles`, type: 'GET' });
+    const result = yield call(fetch, { path: `/sections/${action.section}/articles?limit=2`, type: 'GET' });
     yield put(actions.getArticlesSuccess(result));
   } catch(error) {
     yield put(actions.getArticlesFailed(error));
