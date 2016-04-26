@@ -9,10 +9,6 @@ module.exports = {
     client: [
       './client/index',
       'webpack-dev-server/client?http://localhost:1337'
-    ],
-    admin: [
-      './client.admin/index',
-      'webpack-dev-server/client?http://localhost:1337'
     ]
   },
   output: {

@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
 
-export const Front = ({ data }) => {
+export const Front = () => {
   const style = {
-    backgroundImage: `url('${data.url}')`
+    backgroundImage: `url('http')`
   };
   return (
     <div className='heading' style={style}>

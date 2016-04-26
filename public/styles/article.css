@@ -1,5 +1,5 @@
 .article {
-  background-color: pink;
+  background-color: rgb(140, 138, 143);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -15,23 +15,43 @@
   justify-content: flex-end;
 }
 
+.article-title-style {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: white;
+  padding: 5%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
 .article-description {
   background-color: #181818;
   flex: 1;
   max-height: 368px;
 }
 
+
 .article-text {
 
 }
 
-.article-bubble {
+.article-text-style {
+  font-size: 1.4em;
+  color: white;
+  padding: 5%;
+}
+
+.article-circle {
   position: absolute;
   top: 0;
   left: 0;
   width: 100px;
   height: 100px;
   background-color: #1ba6e2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (min-width: 600px) {
@@ -40,6 +60,10 @@
   }
   .article-title {
     flex: 2.5;
+  }
+
+  .article-title-style {
+    justify-content: flex-start;
   }
 
   .article-description {
@@ -52,7 +76,7 @@
     flex: 3;
   }
 
-  .article-bubble {
+  .article-circle {
     flex: 1;
     position: static;
     top:auto;

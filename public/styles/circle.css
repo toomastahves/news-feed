@@ -1,0 +1,18 @@
+.circle {
+  position: relative;
+  border-radius: 50%;
+  border: 2px solid;
+  width: 100px;
+  height: 100px;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.circle-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.8em;
+  font-weight: bold;
+}

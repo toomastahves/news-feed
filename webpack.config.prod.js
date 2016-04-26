@@ -11,9 +11,6 @@ module.exports = {
   entry: {
     client: [
       './client/index'
-    ],
-    admin: [
-      './client.admin/index'
     ]
   },
   output: {
