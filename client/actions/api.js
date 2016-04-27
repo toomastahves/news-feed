@@ -10,17 +10,31 @@ export const getArticlesRequest = (section) => {
   };
 };
 export const getArticlesSuccess = (articles) => {
+
   const mappedArticles = [];
+
   for(const a of articles) {
-    const mappedArticle = {
-      id: a.id,
-      headline: a.headline,
-      articleLead: a.articleLead[0].html,
-      landscapeImg: a.thumbnail.sources.landscape.large,
-      portraitImg: a.thumbnail.sources.portrait.large
-    };
+    let mappedArticle = {};
+
+    if(a.thumbnail) {
+      mappedArticle = {
+        id: a.id,
+        headline: a.headline,
+        articleLead: a.articleLead[0].html,
+        landscapeImg: a.thumbnail.sources.landscape.large,
+        portraitImg: a.thumbnail.sources.portrait.large
+      };
+    } else {
+      mappedArticle = {
+        id: a.id,
+        headline: a.headline,
+        articleLead: a.articleLead[0].html
+      };
+    }
+
     mappedArticles.push(mappedArticle);
   }
+
   return {
     type: actions.GET_ARTICLES_SUCCESS,
     articles: mappedArticles

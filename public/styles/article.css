@@ -59,13 +59,12 @@
   .article-mobile {
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
   }
   .article-part1-mobile {
     flex: 2;
   }
   .article-part2-mobile {
-    display: none;
+    visibility: hidden;
   }
   .article-part3-mobile {
     flex: 1;

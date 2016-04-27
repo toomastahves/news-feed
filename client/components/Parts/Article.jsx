@@ -2,13 +2,8 @@ import React, { PropTypes } from 'react';
 
 export const Article = ({ article, number }) => {
 
-  const image1 = {
-    backgroundImage: `url('${article.landscapeImg}')`,
-    //WebkitFilter: 'brightness(.6)'
-  };
-  const image2 = {
-    backgroundImage: `url('${article.portraitImg}')`
-  };
+  const image1 = article.landscapeImg ? { backgroundImage: `url('${article.landscapeImg}')` } : {};
+  const image2 = article.portraitImg ? { backgroundImage: `url('${article.portraitImg}')` } : {};
   const type = number % 2 === 1 ? 'type1' : number % 4 !== 0 ? 'type2' : 'type3';
 
   return (

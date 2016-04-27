@@ -16,7 +16,7 @@ export const HomePage = ({ articles, sections, fetching, selectedSection, dispat
     dispatch(selectSection(e.target.value));
   };
   const handleGetArticlesClick = () => {
-    dispatch(getArticlesRequest(81));
+    dispatch(getArticlesRequest('81'));
   };
 
   const handleGetArticlesFromDrawer = (e) => {
@@ -26,11 +26,14 @@ export const HomePage = ({ articles, sections, fetching, selectedSection, dispat
     toggleDrawer();
   };
 
+  let front = <div></div>;
+  if(articles.length === 0) front = <Front handleGetArticlesClick={handleGetArticlesClick} />;
+
   return (
     <div>
       <Drawer handleSectionChange={handleGetArticlesFromDrawer} sections={sections} />
       <Header toggleDrawer={toggleDrawer} sections={sections} fetching={fetching} handleSectionChange={handleSectionChange} selectedSection={selectedSection} />
-      {articles.length === 0 && <Front handleGetArticlesClick={handleGetArticlesClick} />}
+      {front}
       <Content sections={sections} articles={articles} fetching={fetching} />
     </div>
   );

@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import Article from './Article';
 import Spinner from './Spinner';
+import { guid } from '../../../libs/utils/guid';
 
 export const Content = ({ articles, fetching }) => {
   if(fetching.articles) return <div className='spinner-location overlay'><Spinner /></div>;
@@ -8,7 +9,7 @@ export const Content = ({ articles, fetching }) => {
   return (
     <div className='container'>
       {articles.map((a, number) => {
-        return <Article key={a.id} number={number + 1} article={a} />;
+        return <Article key={guid()} number={number + 1} article={a} />;
       })}
     </div>
   );
