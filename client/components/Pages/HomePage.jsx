@@ -28,7 +28,6 @@ export const HomePage = ({ articles, sections, fetching, selectedSection, dispat
     toggleDrawer();
   };
 
-
   return (
     <div>
       <Drawer handleSectionChange={handleGetArticlesFromDrawer} sections={sections} />

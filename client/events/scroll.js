@@ -22,11 +22,23 @@ const getDocHeight = () => {
   );
 };
 
-document.addEventListener('scroll', (event) => {
+let executed = false;
+
+document.addEventListener('scroll', () => {
+
+  // Checking if user has reached bottom of the page, so we can execute another request.
   if(getDocHeight() <= (getScrollXY()[1] + window.innerHeight)) {
-    console.log('bottom');
-    const offset = store.getState().apiReducer.articleOffset;
-    const section = store.getState().commonReducer.selectedSection;
-    store.dispatch(getArticlesRequest(section, offset));
+
+    // Preventing multiple AJAX request in short period of time.
+    if(!executed) {
+      console.log('bottom');
+      const offset = store.getState().apiReducer.articleOffset;
+      const section = store.getState().commonReducer.selectedSection;
+      store.dispatch(getArticlesRequest(section, offset));
+      executed = true;
+      setTimeout(() => {
+        executed = false;
+      }, 500);
+    }
   }
 });

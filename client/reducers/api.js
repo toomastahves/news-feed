@@ -17,6 +17,7 @@ export const apiReducer = (state = initialState, action) => {
   switch(action.type) {
 
     case constants.GET_ARTICLES_REQUEST:
+      console.log(action.articleOffset);
       return Object.assign({}, state, { fetching: { articles: true } });
     case constants.GET_ARTICLES_SUCCESS:
       return Object.assign({}, state, { fetching: { articles: false }, articleOffset: state.articleOffset + 3, articles: [...state.articles, ...action.articles] });
