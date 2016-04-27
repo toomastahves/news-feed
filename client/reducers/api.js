@@ -12,7 +12,8 @@ const initialState = {
   article: {},
   sections: [],
   articleOffset: 0,
-  selectedLimit: '1'
+  selectedLimit: '1',
+  clearResults: false
 };
 
 export const apiReducer = (state = initialState, action) => {
@@ -22,10 +23,13 @@ export const apiReducer = (state = initialState, action) => {
       return Object.assign({}, state, { selectedLimit: action.limit });
 
     case constants.GET_ARTICLES_REQUEST:
-      console.log(action.articleOffset);
-      return Object.assign({}, state, { fetching: { articles: true } });
+      return Object.assign({}, state, { fetching: { articles: true }, clearResults: action.clear });
     case constants.GET_ARTICLES_SUCCESS:
-      return Object.assign({}, state, { fetching: { articles: false }, articleOffset: state.articleOffset + 3, articles: [...state.articles, ...action.articles] });
+      if(state.clearResults)
+        return Object.assign({}, state, { fetching: { articles: false }, articleOffset: 1, articles: action.articles });
+
+      return Object.assign({}, state, { fetching: { articles: false }, articleOffset: Number(state.articleOffset) + Number(state.selectedLimit), articles: [...state.articles, ...action.articles] });
+
     case constants.GET_ARTICLES_FAILED:
       return Object.assign({}, state, { fetching: { articles: false }, error: action.error });
 

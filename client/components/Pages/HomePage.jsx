@@ -16,14 +16,14 @@ export const HomePage = ({
     document.getElementById('drawer').classList.toggle('drawer-open');
   };
   const handleSectionChange = (e) => {
-    dispatch(getArticlesRequest(e.target.value, 0, selectedLimit));
+    dispatch(getArticlesRequest(e.target.value, 0, selectedLimit, true));
     dispatch(selectSection(e.target.value));
   };
   const handleGetArticlesClick = () => {
-    dispatch(getArticlesRequest('81', 0, selectedLimit));
+    dispatch(getArticlesRequest('81', 0, selectedLimit, true));
   };
   const handleGetArticlesFromDrawer = (e) => {
-    dispatch(getArticlesRequest(e.target.value, 0, selectedLimit));
+    dispatch(getArticlesRequest(e.target.value, 0, selectedLimit, true));
     dispatch(selectSection(String(e.target.value)));
     toggleDrawer();
   };

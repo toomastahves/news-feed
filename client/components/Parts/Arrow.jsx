@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 export const Arrow = () => {
   return (
@@ -9,10 +9,6 @@ export const Arrow = () => {
       </div>
     </div>
   );
-};
-
-Arrow.propTypes = {
-
 };
 
 export default Arrow;
