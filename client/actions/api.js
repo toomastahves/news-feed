@@ -3,10 +3,11 @@ import * as actions from '../constants/api';
 /*
 * Get articles list request actions
 */
-export const getArticlesRequest = (section) => {
+export const getArticlesRequest = (section, articleOffset) => {
   return {
     type: actions.GET_ARTICLES_REQUEST,
-    section
+    section,
+    articleOffset
   };
 };
 export const getArticlesSuccess = (articles) => {

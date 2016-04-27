@@ -7,7 +7,10 @@ import { fetch, delay } from '../../libs/utils/fetch';
 function* getArticles(action) {
   yield delay(500);
   try {
-    const result = yield call(fetch, { path: `/sections/${action.section}/articles?limit=5`, type: 'GET' });
+    const result = yield call(fetch, {
+      path: `/sections/${action.section}/articles?limit=1&offset=${action.articleOffset}`,
+      type: 'GET'
+    });
     yield put(actions.getArticlesSuccess(result));
   } catch(error) {
     yield put(actions.getArticlesFailed(error));

@@ -4,7 +4,7 @@ import Spinner from './Spinner';
 import { guid } from '../../../libs/utils/guid';
 
 export const Content = ({ articles, fetching }) => {
-  if(fetching.articles) return <div className='spinner-location overlay'><Spinner /></div>;
+  // if(fetching.articles) return <div className='spinner-location overlay'><Spinner /></div>;
 
   return (
     <div className='container'>

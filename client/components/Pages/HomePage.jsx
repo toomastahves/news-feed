@@ -9,23 +9,25 @@ import Content from '../Parts/Content';
 import Footer from '../Parts/Footer';
 
 export const HomePage = ({ articles, sections, fetching, selectedSection, dispatch }) => {
+
   const toggleDrawer = () => {
     document.getElementById('drawer').classList.toggle('drawer-open');
   };
   const handleSectionChange = (e) => {
-    dispatch(getArticlesRequest(e.target.value));
+    dispatch(getArticlesRequest(e.target.value, 0));
     dispatch(selectSection(e.target.value));
   };
   const handleGetArticlesClick = () => {
-    dispatch(getArticlesRequest('81'));
+    dispatch(getArticlesRequest('81', 0));
   };
 
   const handleGetArticlesFromDrawer = (e) => {
     console.log(e.target.value);
-    dispatch(getArticlesRequest(e.target.value));
+    dispatch(getArticlesRequest(e.target.value, 0));
     dispatch(selectSection(String(e.target.value)));
     toggleDrawer();
   };
+
 
   return (
     <div>
@@ -33,7 +35,7 @@ export const HomePage = ({ articles, sections, fetching, selectedSection, dispat
       <Header toggleDrawer={toggleDrawer} sections={sections} fetching={fetching} handleSectionChange={handleSectionChange} selectedSection={selectedSection} />
       {articles.length === 0 && <Front handleGetArticlesClick={handleGetArticlesClick} />}
       <Content sections={sections} articles={articles} fetching={fetching} />
-      {articles.length !== 0 && <Footer />}
+      <Footer />
     </div>
   );
 };

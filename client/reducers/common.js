@@ -1,7 +1,7 @@
 import * as constants from '../constants/common';
 
 const initialState = {
-  selectedSection: '0'
+  selectedSection: '81'
 };
 
 export const commonReducer = (state = initialState, action) => {
