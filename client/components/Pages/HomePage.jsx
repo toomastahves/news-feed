@@ -8,14 +8,19 @@ import Front from '../Parts/Front';
 import Content from '../Parts/Content';
 
 export const HomePage = ({ articles, sections, fetching, selectedSection, dispatch }) => {
+
   const handleChange = (e) => {
     dispatch(getArticlesRequest(e.target.value));
     dispatch(selectSection(e.target.value));
   };
+  const handleClick = () => {
+    dispatch(getArticlesRequest(253));
+  };
+
   return (
     <div>
       <Header sections={sections} fetching={fetching} handleChange={handleChange} selectedSection={selectedSection} />
-      <Front />
+      {articles.length === 0 && <Front handleClick={handleClick} />}
       <Content sections={sections} articles={articles} fetching={fetching} />
     </div>
   );
@@ -39,7 +44,6 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  dispatch(getArticlesRequest(253));
   dispatch(getSectionsRequest());
   return { dispatch };
 };
