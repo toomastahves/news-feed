@@ -19,7 +19,7 @@ export const apiReducer = (state = initialState, action) => {
     case constants.GET_ARTICLES_REQUEST:
       return Object.assign({}, state, { fetching: { articles: true } });
     case constants.GET_ARTICLES_SUCCESS:
-      return Object.assign({}, state, { fetching: { articles: false }, articleOffset: state.articleOffset + 1, articles: [...state.articles, ...action.articles] });
+      return Object.assign({}, state, { fetching: { articles: false }, articleOffset: state.articleOffset + 3, articles: [...state.articles, ...action.articles] });
     case constants.GET_ARTICLES_FAILED:
       return Object.assign({}, state, { fetching: { articles: false }, error: action.error });
 

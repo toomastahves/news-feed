@@ -1,23 +1,21 @@
 .drawer {
   position: fixed;
-  height: 800px;
+  height: 100vh;
   margin-top: 50px;
-  width: 100vw;
-  left: -100vw;
+  max-width: 40vw;
+  left: -50vw;
   transition: left 0.4s;
   z-index: 1;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: #1ba6e2;
+  overflow-y: scroll;
 }
 
 .section-item {
+  padding: 5px 0px 5px 20px;
   color: white;
-  font-size: 1.2em;
-  padding: 10px;
+  font-size: 1em;
   background-color: #1ba6e2;
-  width: 100vw;
+  max-width: 40vw;
   cursor: pointer;
 }
 .section-item:hover {
