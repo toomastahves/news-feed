@@ -8,7 +8,7 @@ function* getArticles(action) {
   yield delay(500);
   try {
     const result = yield call(fetch, {
-      path: `/sections/${action.section}/articles?limit=3&offset=${action.articleOffset}`,
+      path: `/sections/${action.section}/articles?limit=${action.limit}&offset=${action.offset}`,
       type: 'GET'
     });
     yield put(actions.getArticlesSuccess(result));

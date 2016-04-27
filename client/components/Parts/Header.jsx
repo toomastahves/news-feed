@@ -1,12 +1,16 @@
 import React, { PropTypes } from 'react';
 import SelectSection from './SelectSection';
+import SelectLimit from './SelectLimit';
 
-export const Header = ({ sections, fetching, handleSectionChange, selectedSection, toggleDrawer }) => {
+export const Header = ({
+  sections, fetching, handleSectionChange, selectedSection, toggleDrawer, selectedLimit, handleLimitChange
+}) => {
   return (
     <div className='header'>
       <div className='header-left'>
         <div onClick={toggleDrawer} className='hamburger'></div>
         <div className='select-section'>
+          <SelectLimit selectedLimit={selectedLimit} handleLimitChange={handleLimitChange} />
           <SelectSection selectedSection={selectedSection} handleSectionChange={handleSectionChange} sections={sections} fetching={fetching} />
         </div>
       </div>
@@ -21,7 +25,9 @@ Header.propTypes = {
   fetching: PropTypes.object.isRequired,
   handleSectionChange: PropTypes.func.isRequired,
   selectedSection: PropTypes.string.isRequired,
-  toggleDrawer: PropTypes.func.isRequired
+  toggleDrawer: PropTypes.func.isRequired,
+  selectedLimit: PropTypes.string.isRequired,
+  handleLimitChange: PropTypes.func.isRequired
 };
 
 export default Header;

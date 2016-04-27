@@ -3,7 +3,7 @@ import Spinner from './Spinner';
 import { guid } from '../../../libs/utils/guid';
 
 export const SelectSection = ({ sections, fetching, handleSectionChange, selectedSection }) => {
-  if(fetching.sections) return <Spinner />;
+  if(fetching.sections) return <div><Spinner /></div>;
 
   const options = [];
   options.push(<option key={guid()} value='0'>{'Select section'}</option>);
@@ -14,11 +14,9 @@ export const SelectSection = ({ sections, fetching, handleSectionChange, selecte
   }
 
   return (
-    <div>
-      <select value={selectedSection} onChange={handleSectionChange}>
-        {options}
-      </select>
-    </div>
+    <select value={selectedSection} onChange={handleSectionChange}>
+      {options}
+    </select>
   );
 };
 

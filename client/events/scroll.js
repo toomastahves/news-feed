@@ -33,8 +33,9 @@ document.addEventListener('scroll', () => {
     if(!executed) {
       console.log('bottom');
       const offset = store.getState().apiReducer.articleOffset;
+      const limit = store.getState().apiReducer.selectedLimit;
       const section = store.getState().commonReducer.selectedSection;
-      store.dispatch(getArticlesRequest(section, offset));
+      store.dispatch(getArticlesRequest(section, offset, limit));
       executed = true;
       setTimeout(() => {
         executed = false;

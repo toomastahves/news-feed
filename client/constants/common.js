@@ -1,1 +1,2 @@
 export const SELECT_SECTION = 'SELECT_SECTION';
+export const CHANGE_LIMIT = 'CHANGE_LIMIT';

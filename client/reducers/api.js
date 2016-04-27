@@ -1,4 +1,5 @@
 import * as constants from '../constants/api';
+import { CHANGE_LIMIT } from '../constants/common';
 
 const initialState = {
   fetching: {
@@ -10,11 +11,15 @@ const initialState = {
   error: {},
   article: {},
   sections: [],
-  articleOffset: 0
+  articleOffset: 0,
+  selectedLimit: '1'
 };
 
 export const apiReducer = (state = initialState, action) => {
   switch(action.type) {
+
+    case CHANGE_LIMIT:
+      return Object.assign({}, state, { selectedLimit: action.limit });
 
     case constants.GET_ARTICLES_REQUEST:
       console.log(action.articleOffset);
