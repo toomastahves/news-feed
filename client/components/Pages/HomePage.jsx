@@ -12,7 +12,6 @@ export const HomePage = ({ articles, sections, fetching, dispatch }) => {
   };
   return (
     <div>
-      {/* <Header handleChange={handleChange} sections={sections} fetching={fetching} /> */}
       <Content sections={sections} articles={articles} fetching={fetching} />
     </div>
   );

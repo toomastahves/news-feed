@@ -5,7 +5,7 @@ import * as constants from '../constants/api';
 import { fetch, delay } from '../../libs/utils/fetch';
 
 function* getArticles(action) {
-  yield delay(1000);
+  yield delay(500);
   try {
     const result = yield call(fetch, { path: `/sections/${action.section}/articles?limit=5`, type: 'GET' });
     yield put(actions.getArticlesSuccess(result));
@@ -18,7 +18,7 @@ export function* watchGetArticles() {
 }
 
 function* getSections() {
-  yield delay(1000);
+  yield delay(500);
   try {
     const result = yield call(fetch, { path: '/sections', type: 'GET' });
     yield put(actions.getSectionsSuccess(result));
