@@ -12,6 +12,7 @@ export const HomePage = ({ articles, sections, fetching, dispatch }) => {
   };
   return (
     <div>
+      <Header sections={sections} fetching={fetching} handleChange={handleChange} />
       <Content sections={sections} articles={articles} fetching={fetching} />
     </div>
   );
@@ -32,8 +33,8 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  dispatch(getArticlesRequest(123));
-  // dispatch(getSectionsRequest());
+  dispatch(getArticlesRequest(253));
+  dispatch(getSectionsRequest());
   return { dispatch };
 };
 

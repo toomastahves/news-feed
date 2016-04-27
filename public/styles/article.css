@@ -1,79 +1,99 @@
-@media (max-width: 649px) {
+/*
+* Article common parts
+*/
+.article {
+  position: relative;
+  max-width: 1200px;
+  height: 650px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.article-title {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: white;
+  padding: 5%;
+}
+.article-description {
+  font-size: 1.4em;
+  color: white;
+  padding: 3%;
+}
 
+.article-part1 {
+  background-position: center;
+  background-size: cover;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.article-part2 {
+  background-position: center;
+  background-size: cover;
+}
+.article-part3 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.article-part4 {
+  background-color: #1ba6e2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 649px) {
+  /*
+  * Layout mobile
+  */
+  .article-mobile {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .article-part1-mobile {
+    flex: 2;
+  }
+  .article-part2-mobile {
+    display: none;
+  }
+  .article-part3-mobile {
+    flex: 1;
+  }
+  .article-part4-mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 
 @media (min-width: 650px) {
   /*
-  * Article common parts
-  */
-  .article {
-    background-color: rgb(205, 241, 232);
-    width: 100vw;
-    max-width: 1200px;
-    height: 600px;
-    margin: auto;
-    animation: fadein 1s;
-  }
-  @keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
-
-  .article-title {
-    opacity: 0.9;
-    font-size: 1.4em;
-    font-weight: bold;
-    color: white;
-    padding: 5%;
-  }
-  .article-description {
-    font-size: 1.4em;
-    color: white;
-    padding: 5%;
-  }
-
-  .article-part1 {
-    background-position: center;
-    background-size: cover;
-    opacity: 0.9;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-  .article-part2 {
-    background-color: #1ba6e2;
-    opacity: 50%;
-  }
-  .article-part3 {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  .article-part4 {
-    background-color: #1ba6e2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  /*
   * Layout type 1
   */
-  .article-layout-type1 {
+  .article-type1 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
-  .article-part1-layout-type1 {
+  .article-part1-type1 {
     flex-basis: 100%;
     height: 70%;
   }
-  .article-part2-layout-type1 {
+  .article-part2-type1 {
     display: none;
   }
-  .article-part3-layout-type1 {
+  .article-part3-type1 {
     flex-basis: 70%;
     height: 30%;
   }
-  .article-part4-layout-type1 {
+  .article-part4-type1 {
     flex-basis: 30%;
     height: 30%;
   }
@@ -81,26 +101,26 @@
   /*
   * Layout type 2
   */
-  .article-layout-type2 {
+  .article-type2 {
     display: flex;
     flex-wrap: wrap;
   }
-  .article-part1-layout-type2 {
+  .article-part1-type2 {
     order: 2;
     flex-basis: 70%;
     height: 70%;
   }
-  .article-part2-layout-type2 {
+  .article-part2-type2 {
     order: 1;
     flex-basis: 30%;
     height: 70%;
   }
-  .article-part3-layout-type2 {
+  .article-part3-type2 {
     order: 4;
     flex-basis: 70%;
     height: 30%;
   }
-  .article-part4-layout-type2 {
+  .article-part4-type2 {
     order: 3;
     flex-basis: 30%;
     height: 30%;
@@ -109,29 +129,29 @@
   /*
   * Layout type 3
   */
-  .article-layout-type3 {
+  .article-type3 {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
   }
-  .article-part1-layout-type3 {
+  .article-part1-type3 {
     order: 3;
-    flex-basis: 70%;
+    flex-basis: 60%;
     width: 70%;
   }
-  .article-part2-layout-type3 {
+  .article-part2-type3 {
     order: 2;
-    flex-basis: 70%;
+    flex-basis: 65%;
     width: 30%;
   }
-  .article-part3-layout-type3 {
+  .article-part3-type3 {
     order: 4;
-    flex-basis: 30%;
+    flex-basis: 40%;
     width: 70%;
   }
-  .article-part4-layout-type3 {
+  .article-part4-type3 {
     order: 1;
-    flex-basis: 30%;
+    flex-basis: 35%;
     width: 30%;
   }
 }
