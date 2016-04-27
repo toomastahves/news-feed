@@ -4,10 +4,10 @@ import Spinner from './Spinner';
 import { guid } from '../../../libs/utils/guid';
 
 export const Content = ({ articles, fetching }) => {
-  // if(fetching.articles) return <div className='spinner-location overlay'><Spinner /></div>;
 
   return (
     <div className='container'>
+      {fetching.articles && <div className='spinner-location overlay'><Spinner /></div>}
       {articles.map((a, number) => {
         return <Article key={guid()} number={number + 1} article={a} />;
       })}

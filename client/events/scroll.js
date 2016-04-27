@@ -23,7 +23,7 @@ const getDocHeight = () => {
 };
 
 document.addEventListener('scroll', (event) => {
-  if(getDocHeight() === getScrollXY()[1] + window.innerHeight) {
+  if(getDocHeight() <= (getScrollXY()[1] + window.innerHeight)) {
     console.log('bottom');
     const offset = store.getState().apiReducer.articleOffset;
     const section = store.getState().commonReducer.selectedSection;

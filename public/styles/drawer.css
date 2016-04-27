@@ -1,8 +1,7 @@
 .drawer {
-  position: absolute;
+  position: fixed;
   height: 800px;
   margin-top: 50px;
-  top: 0;
   width: 100vw;
   left: -100vw;
   transition: left 0.4s;
