@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import Spinner from './Spinner';
 import { guid } from '../../../libs/utils/guid';
 
-export const SelectSection = ({ sections, fetching, handleChange, selectedSection }) => {
+export const SelectSection = ({ sections, fetching, handleSectionChange, selectedSection }) => {
   if(fetching.sections) return <Spinner />;
 
   const options = [];
@@ -12,9 +12,10 @@ export const SelectSection = ({ sections, fetching, handleChange, selectedSectio
     const option = <option key={guid()} value={sections[i].id}>{sections[i].name}</option>;
     if(sections[i].name) options.push(option);
   }
+
   return (
     <div>
-      <select value={selectedSection} onChange={handleChange}>
+      <select value={selectedSection} onChange={handleSectionChange}>
         {options}
       </select>
     </div>
@@ -22,7 +23,10 @@ export const SelectSection = ({ sections, fetching, handleChange, selectedSectio
 };
 
 SelectSection.propTypes = {
-
+  sections: PropTypes.array.isRequired,
+  fetching: PropTypes.object.isRequired,
+  handleSectionChange: PropTypes.func.isRequired,
+  selectedSection: PropTypes.string.isRequired
 };
 
 export default SelectSection;

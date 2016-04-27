@@ -19,10 +19,17 @@
   content: '☰';
 }
 
-.select-section {
+.header-left {
   display: flex;
   flex-direction: row;
 }
+@media (max-width: 650px) {
+  .select-section {
+    display: none;
+  }
+}
+
+
 select {
   border: none;
   padding: 10px;

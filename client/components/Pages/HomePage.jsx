@@ -8,19 +8,29 @@ import Front from '../Parts/Front';
 import Content from '../Parts/Content';
 
 export const HomePage = ({ articles, sections, fetching, selectedSection, dispatch }) => {
-
-  const handleChange = (e) => {
+  const toggleDrawer = () => {
+    document.getElementById('drawer').classList.toggle('drawer-open');
+  };
+  const handleSectionChange = (e) => {
     dispatch(getArticlesRequest(e.target.value));
     dispatch(selectSection(e.target.value));
   };
-  const handleClick = () => {
-    dispatch(getArticlesRequest(253));
+  const handleGetArticlesClick = () => {
+    dispatch(getArticlesRequest(81));
+  };
+
+  const handleGetArticlesFromDrawer = (e) => {
+    console.log(e.target.value);
+    dispatch(getArticlesRequest(e.target.value));
+    dispatch(selectSection(String(e.target.value)));
+    toggleDrawer();
   };
 
   return (
     <div>
-      <Header sections={sections} fetching={fetching} handleChange={handleChange} selectedSection={selectedSection} />
-      {articles.length === 0 && <Front handleClick={handleClick} />}
+      <Drawer handleSectionChange={handleGetArticlesFromDrawer} sections={sections} />
+      <Header toggleDrawer={toggleDrawer} sections={sections} fetching={fetching} handleSectionChange={handleSectionChange} selectedSection={selectedSection} />
+      {articles.length === 0 && <Front handleGetArticlesClick={handleGetArticlesClick} />}
       <Content sections={sections} articles={articles} fetching={fetching} />
     </div>
   );

@@ -1,17 +1,27 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import SelectSection from './SelectSection';
 
-export const Header = ({ sections, fetching, handleChange, selectedSection }) => {
+export const Header = ({ sections, fetching, handleSectionChange, selectedSection, toggleDrawer }) => {
   return (
     <div className='header'>
-      <div className='select-section'>
-        <div className='hamburger'></div>
-        <SelectSection selectedSection={selectedSection} handleChange={handleChange} sections={sections} fetching={fetching} />
+      <div className='header-left'>
+        <div onClick={toggleDrawer} className='hamburger'></div>
+        <div className='select-section'>
+          <SelectSection selectedSection={selectedSection} handleSectionChange={handleSectionChange} sections={sections} fetching={fetching} />
+        </div>
       </div>
       <a href='https://www.postimees.ee/' target='_blank'><div className='logo'></div></a>
       <a href='https://github.com/toomastahves/news-feed' target='_blank'><div className='share'></div></a>
     </div>
   );
+};
+
+Header.propTypes = {
+  sections: PropTypes.array.isRequired,
+  fetching: PropTypes.object.isRequired,
+  handleSectionChange: PropTypes.func.isRequired,
+  selectedSection: PropTypes.string.isRequired,
+  toggleDrawer: PropTypes.func.isRequired
 };
 
 export default Header;
