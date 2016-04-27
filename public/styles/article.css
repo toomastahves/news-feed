@@ -4,11 +4,15 @@
 .article {
   position: relative;
   max-width: 1200px;
+  width: 100vw;
   height: 650px;
   margin: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+.article:first-child {
+  margin-top: 50px;
 }
 @keyframes fadein {
   from { opacity: 0; }

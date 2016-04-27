@@ -10,7 +10,6 @@ export const getArticlesRequest = (section) => {
   };
 };
 export const getArticlesSuccess = (articles) => {
-  // console.log(articles);
   const mappedArticles = [];
   for(const a of articles) {
     const mappedArticle = {
@@ -73,7 +72,6 @@ export const getSectionsSuccess = (sections) => {
     };
     mappedSections.push(mappedSection);
   }
-  console.log(mappedSections);
   return {
     type: actions.GET_SECTIONS_SUCCESS,
     sections: mappedSections

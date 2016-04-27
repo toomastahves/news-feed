@@ -2,6 +2,7 @@
 .heading {
   background-position: center;
   background-size: cover;
+  background-image: url('/img/front.jpg');
   position: relative;
   height: 100vh;
   max-height: 600px;
