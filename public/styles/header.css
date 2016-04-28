@@ -31,12 +31,13 @@
 
 
 select {
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  width: 205px;
+  border: 1px solid rgba(88, 178, 242, 0.7);
   padding: 10px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: rgba(88, 178, 242, 0.7) url('/img/arrow.png') no-repeat 120px 12px;
+  background: rgba(88, 178, 242, 0.7) url('/img/arrow.png') no-repeat 170px 12px;
 }
 select option {
   font-size: 1.3em;
