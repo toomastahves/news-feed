@@ -23,10 +23,10 @@ export const apiReducer = (state = initialState, action) => {
       return Object.assign({}, state, { selectedLimit: action.limit });
 
     case constants.GET_ARTICLES_REQUEST:
-      return Object.assign({}, state, { fetching: { articles: true }, clearResults: action.clear });
+      return Object.assign({}, state, { fetching: { articles: true }, clearResults: action.clear, articleOffset: action.offset, selectedLimit: action.limit });
     case constants.GET_ARTICLES_SUCCESS:
       if(state.clearResults)
-        return Object.assign({}, state, { fetching: { articles: false }, articleOffset: 1, articles: action.articles });
+        return Object.assign({}, state, { fetching: { articles: false }, articleOffset: state.selectedLimit, articles: action.articles });
 
       return Object.assign({}, state, { fetching: { articles: false }, articleOffset: Number(state.articleOffset) + Number(state.selectedLimit), articles: [...state.articles, ...action.articles] });
 
