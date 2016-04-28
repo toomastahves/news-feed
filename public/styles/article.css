@@ -88,22 +88,23 @@
   align-items: center;
 }
 
-@media (max-width: 649px) {
+@media (max-width: 800px) {
   /*
   * Layout mobile
   */
   .article-mobile {
     display: flex;
     flex-direction: column;
+    height: 580px;
   }
   .article-part1-mobile {
-    flex: 2;
+    flex: 1;
   }
   .article-part2-mobile {
     visibility: hidden;
   }
   .article-part3-mobile {
-    flex: 1;
+    flex-shrink: 1;
   }
   .article-part4-mobile {
     position: absolute;
@@ -117,7 +118,7 @@
   }
 }
 
-@media (min-width: 650px) {
+@media (min-width: 801px) {
   /*
   * Layout type 1
   */

@@ -32,3 +32,16 @@ function* getSections() {
 export function* watchGetSections() {
   yield* takeLatest(constants.GET_SECTIONS_REQUEST, getSections);
 }
+
+function* getArticle(action) {
+  yield delay(500);
+  try {
+    const result = yield call(fetch, { path: `/articles/${action.id}`, type: 'GET' });
+    yield put(actions.getArticleSuccess(result));
+  } catch(error) {
+    yield put(actions.getArticleFailed(error));
+  }
+}
+export function* watchGetArticle() {
+  yield* takeLatest(constants.GET_ARTICLE_REQUEST, getArticle);
+}

@@ -3,6 +3,7 @@ import * as constants from '../constants/api';
 const initialState = {
   fetchingArticles: false,
   fetchingSections: false,
+  fetchingArticle: false,
   articles: [],
   sections: [],
   error: '',
@@ -26,9 +27,7 @@ export const apiReducer = (state = initialState, action) => {
     case constants.GET_ARTICLES_SUCCESS:
       if(state.clear)
         return Object.assign({}, state, { fetchingArticles: false, offset: state.limit, articles: action.articles });
-
       return Object.assign({}, state, { fetchingArticles: false, offset: state.offset + state.limit, articles: [...state.articles, ...action.articles] });
-
     case constants.GET_ARTICLES_FAILED:
       return Object.assign({}, state, { error: action.error });
 

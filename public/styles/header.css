@@ -29,18 +29,17 @@
   }
 }
 
-
 select {
   width: 205px;
   border: 1px solid rgba(88, 178, 242, 0.7);
-  padding: 10px;
+  padding: 8px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: rgba(88, 178, 242, 0.7) url('/img/arrow.png') no-repeat 170px 12px;
+  background: rgba(88, 178, 242, 0.7) url('/img/arrow.png') no-repeat 170px 10px;
 }
 select option {
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 
 .logo {

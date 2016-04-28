@@ -1,5 +1,24 @@
 .article-details-wrapper {
   margin: 0 auto;
   margin-top: 50px;
-  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  height: 800px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.article-details-header {
+  flex: 1;
+  background-position: center;
+  background-size: cover;
+}
+
+.article-details-body {
+  flex-shrink: 2;
+  background-color: rgb(55, 55, 55);
+  color: white;
+  padding: 5%;
+  font-size: 1.2em;
 }

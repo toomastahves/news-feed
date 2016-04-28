@@ -5,19 +5,10 @@ export const fetch = ({ path, type, data }) => {
   console.log(`${type} ${url}`);
 
   return new Promise((resolve, reject) => {
-    let req = new XMLHttpRequest();
-
-    // CORS support
-    if ('withCredentials' in req) {
-      req.open(type, url, true);
-    } else if (typeof XDomainRequest != 'undefined') {
-      req = new XDomainRequest();
-      req.open(type, url);
-    } else {
-      req = null;
-    }
-
-    req.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+    const req = new XMLHttpRequest();
+    req.open(type, url);
+    req.withCredentials = true;
+    req.setRequestHeader('content-type', 'application/json');
     req.onload = function() {
       if(req.status === 200) {
         resolve(JSON.parse(req.response));
@@ -28,9 +19,9 @@ export const fetch = ({ path, type, data }) => {
     };
     req.onerror = function() {
       console.log('reject 2');
-      reject(JSON.parse({ error: { message: 'Network error' } }));
+      reject('Network error');
     };
-    req.send(data);
+    req.send();
   });
 };
 
