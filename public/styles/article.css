@@ -56,11 +56,20 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.18) 100%);
+  background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
 }
+
 .article-part2 {
   background-position: center;
   background-size: cover;
+  background-color: #1aadec;
+  opacity: 0.8;
+  background-blend-mode: multiply;
+  transition: ease 0.5s;
+}
+.article-part2:hover {
+  background-color: transparent;
+  opacity: 1;
 }
 .article-part3 {
   background-color: #181818;
