@@ -10,9 +10,13 @@ export const Article = ({ article, number }) => {
 
   return (
     <div className={`article article-mobile article-${type}`}>
-      <div className={`article-part1 article-part1-mobile article-part1-${type}`} style={image1}>
-        <div className='article-title'>{article.headline}</div>
-        <div className='article-description' style={visibility}>{article.articleLead.replace(/<(?:.|\n)*?>/gm, '')}</div>
+      <div className={`article-part1 article-part1-mobile article-part1-${type}`}>
+        <div className='article-image' style={image1}>
+        </div>
+        <div className='article-text'>
+          <div className='article-title'>{article.headline}</div>
+          <div className='article-description-second' style={visibility}>{article.articleLead.replace(/<(?:.|\n)*?>/gm, '')}</div>
+        </div>
       </div>
       <div className={`article-part2 article-part2-mobile article-part2-${type}`} style={image2}></div>
       <div className={`article-part3 article-part3-mobile article-part3-${type}`}>

@@ -24,26 +24,46 @@
   color: white;
   padding: 5%;
 }
+
 .article-description {
   font-size: 1.4em;
   color: white;
-  padding: 3%;
+  padding: 5%;
+}
+.article-description-second {
+  display: none;
+  font-size: 1.4em;
+  color: white;
+  padding: 5%;
+}
+
+.article-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+}
+.article-text {
+
 }
 
 .article-part1 {
-  background-position: center;
-  background-size: cover;
-  opacity: 0.9;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.18) 100%);
 }
 .article-part2 {
   background-position: center;
   background-size: cover;
 }
 .article-part3 {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #181818;
 }
 .article-part4 {
   background-color: #1ba6e2;
@@ -73,6 +93,9 @@
     position: absolute;
     top: 0;
     left: 0;
+  }
+  .article-description-second {
+    display: none !important;
   }
 }
 

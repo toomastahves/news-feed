@@ -72,6 +72,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   dispatch(getSectionsRequest());
+  // dispatch(getArticlesRequest('81', '0', '1', true));
   return { dispatch };
 };
 
