@@ -14,7 +14,11 @@ export const Header = ({
         </div>
       </div>
       <a href='https://www.postimees.ee/' target='_blank'><div className='logo'></div></a>
-      <a href='https://github.com/toomastahves/news-feed' target='_blank'><div className='share'></div></a>
+      <div className='share-icons'>
+        <a href='https://www.facebook.com/postimees' target='_blank'><div className='facebook'></div></a>
+        <a href='https://twitter.com/postimees' target='_blank'><div className='twitter'></div></a>
+        <div className='share'></div>
+      </div>
     </div>
   );
 };

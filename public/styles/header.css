@@ -50,10 +50,48 @@ select option {
   height: 32px;
 }
 
+.share-icons {
+  display: flex;
+  justify-content: flex-end;
+}
+.share-icons * {
+  padding: 0 5px 0 5px;
+}
 .share {
   background-image: url('/img/share.png');
   width: 33px;
   height: 36px;
   background-repeat: no-repeat;
   background-size: cover;
+  padding: 0 10px 0 10px;
+  display: none;
+  cursor: pointer;
+}
+.facebook {
+  background-image: url('/img/facebook.png');
+  width: 41px;
+  height: 41px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 10px 0 10px;
+}
+.twitter {
+  background-image: url('/img/twitter.png');
+  width: 41px;
+  height: 41px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 10px 0 10px;
+}
+
+@media (max-width: 650px) {
+  .share {
+    display: block;
+  }
+  .facebook {
+    display: none;
+  }
+  .twitter {
+    display: none;
+  }
 }
