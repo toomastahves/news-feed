@@ -10,7 +10,6 @@ export const Header = ({
       <div className='header-left'>
         <div onClick={toggleDrawer} className='hamburger'></div>
         <div className='select-section'>
-          <SelectLimit selectedLimit={selectedLimit} handleLimitChange={handleLimitChange} />
           <SelectSection selectedSection={selectedSection} handleSectionChange={handleSectionChange} sections={sections} fetching={fetching} />
         </div>
       </div>

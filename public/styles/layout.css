@@ -12,5 +12,4 @@ html, body {
   display: flex;
   flex-direction: column;
   background: rgba(0, 0, 0, 0.7);
-  min-height: 100vh;
 }

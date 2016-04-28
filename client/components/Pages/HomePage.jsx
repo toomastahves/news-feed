@@ -14,6 +14,7 @@ export const HomePage = ({
 
   const toggleDrawer = () => {
     document.getElementById('drawer').classList.toggle('drawer-open');
+    document.body.style.overflow = 'auto';
   };
   const handleSectionChange = (e) => {
     dispatch(getArticlesRequest(e.target.value, 0, selectedLimit, true));

@@ -4,7 +4,7 @@
   margin-top: 50px;
   max-width: 40vw;
   left: -50vw;
-  transition: left 0.4s;
+  transition: left 0.3s;
   z-index: 1;
   background-color: #1ba6e2;
   overflow-y: scroll;

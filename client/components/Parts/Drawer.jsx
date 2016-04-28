@@ -5,7 +5,6 @@ export const Drawer = ({ sections, handleSectionChange }) => {
   const handleMouseOver = () => {
     document.body.style.overflow = 'hidden';
   };
-  document.body.style.overflow = 'auto';
 
   return (
     <div onMouseOver={handleMouseOver} id='drawer' className='drawer'>

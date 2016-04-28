@@ -12,7 +12,7 @@ const initialState = {
   article: {},
   sections: [],
   articleOffset: 0,
-  selectedLimit: '1',
+  selectedLimit: '3',
   clearResults: false
 };
 
