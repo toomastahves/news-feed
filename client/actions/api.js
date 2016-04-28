@@ -3,7 +3,7 @@ import * as actions from '../constants/api';
 /*
 * Get articles list request actions
 */
-export const getArticlesRequest = (section, offset, limit, clear) => {
+export const getArticlesRequest = ({ section, offset, limit, clear }) => {
   return {
     type: actions.GET_ARTICLES_REQUEST,
     section,
@@ -98,5 +98,22 @@ export const getSectionsFailed = (error) => {
   return {
     type: actions.GET_SECTIONS_FAILED,
     error
+  };
+};
+
+/*
+* Change handlers for limit and section
+*/
+export const selectSection = (section) => {
+  return {
+    type: actions.CHANGE_SECTION,
+    section
+  };
+};
+
+export const changeLimit = (limit) => {
+  return {
+    type: actions.CHANGE_SECTION,
+    limit
   };
 };

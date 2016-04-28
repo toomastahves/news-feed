@@ -1,5 +1,8 @@
 export const API_URI = 'https://api.postimees.ee/rest/v1';
 
+export const CHANGE_SECTION = 'CHANGE_SECTION';
+export const CHANGE_LIMIT = 'CHANGE_LIMIT';
+
 export const GET_ARTICLES_REQUEST = 'GET_ARTICLES_REQUEST';
 export const GET_ARTICLES_SUCCESS = 'GET_ARTICLES_SUCCESS';
 export const GET_ARTICLES_FAILED = 'GET_ARTICLES_FAILED';

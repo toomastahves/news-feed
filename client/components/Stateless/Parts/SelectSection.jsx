@@ -1,12 +1,12 @@
 import React, { PropTypes } from 'react';
 import Spinner from './Spinner';
-import { guid } from '../../../libs/utils/guid';
+import { guid } from '../../../../libs/utils/guid';
 
-export const SelectSection = ({ sections, fetching, handleSectionChange, selectedSection }) => {
-  if(fetching.sections) return <div><Spinner /></div>;
+export const SelectSection = ({ sections, fetching, handleSectionChange, section }) => {
+  if(fetching) return <div><Spinner /></div>;
 
   const options = [];
-  options.push(<option key={guid()} value='0'>{'Select section'}</option>);
+  options.push(<option key={guid()} value={0}>{'Select section'}</option>);
 
   for(let i = 0; i < sections.length; i++) {
     const option = <option key={guid()} value={sections[i].id}>{sections[i].name}</option>;
@@ -14,7 +14,7 @@ export const SelectSection = ({ sections, fetching, handleSectionChange, selecte
   }
 
   return (
-    <select value={selectedSection} onChange={handleSectionChange}>
+    <select value={section} onChange={handleSectionChange}>
       {options}
     </select>
   );
@@ -22,9 +22,9 @@ export const SelectSection = ({ sections, fetching, handleSectionChange, selecte
 
 SelectSection.propTypes = {
   sections: PropTypes.array.isRequired,
-  fetching: PropTypes.object.isRequired,
+  fetching: PropTypes.bool.isRequired,
   handleSectionChange: PropTypes.func.isRequired,
-  selectedSection: PropTypes.string.isRequired
+  section: PropTypes.number.isRequired
 };
 
 export default SelectSection;

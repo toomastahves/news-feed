@@ -1,19 +1,18 @@
 import React, { PropTypes } from 'react';
-import SelectSection from './SelectSection';
-import SelectLimit from './SelectLimit';
+import SelectSection from './Parts/SelectSection';
 
 export const Header = ({
-  sections, fetching, handleSectionChange, selectedSection, toggleDrawer, selectedLimit, handleLimitChange
+  sections, fetching, handleSectionChange, section, toggleDrawer
 }) => {
   return (
     <div className='header'>
       <div className='header-left'>
         <div onClick={toggleDrawer} className='hamburger'></div>
         <div className='select-section'>
-          <SelectSection selectedSection={selectedSection} handleSectionChange={handleSectionChange} sections={sections} fetching={fetching} />
+          <SelectSection section={section} handleSectionChange={handleSectionChange} sections={sections} fetching={fetching} />
         </div>
       </div>
-      <a href='https://www.postimees.ee/' target='_blank'><div className='logo'></div></a>
+      <a href='#/front'><div className='logo'></div></a>
       <div className='share-icons'>
         <a href='https://www.facebook.com/postimees' target='_blank'><div className='facebook'></div></a>
         <a href='https://twitter.com/postimees' target='_blank'><div className='twitter'></div></a>
@@ -25,12 +24,11 @@ export const Header = ({
 
 Header.propTypes = {
   sections: PropTypes.array.isRequired,
-  fetching: PropTypes.object.isRequired,
+  fetching: PropTypes.bool.isRequired,
   handleSectionChange: PropTypes.func.isRequired,
-  selectedSection: PropTypes.string.isRequired,
+  section: PropTypes.number.isRequired,
   toggleDrawer: PropTypes.func.isRequired,
-  selectedLimit: PropTypes.string.isRequired,
-  handleLimitChange: PropTypes.func.isRequired
+  limit: PropTypes.number.isRequired
 };
 
 export default Header;

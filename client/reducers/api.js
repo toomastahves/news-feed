@@ -1,51 +1,50 @@
 import * as constants from '../constants/api';
-import { CHANGE_LIMIT } from '../constants/common';
 
 const initialState = {
-  fetching: {
-    sections: false,
-    articles: false,
-    article: false
-  },
+  fetchingArticles: false,
+  fetchingSections: false,
   articles: [],
-  error: {},
-  article: {},
   sections: [],
-  articleOffset: 0,
-  selectedLimit: '3',
-  clearResults: false
+  error: '',
+  article: {},
+  offset: 0,
+  limit: 1,
+  section: 81,
+  clear: false
 };
 
 export const apiReducer = (state = initialState, action) => {
   switch(action.type) {
 
-    case CHANGE_LIMIT:
-      return Object.assign({}, state, { selectedLimit: action.limit });
+    case constants.CHANGE_LIMIT:
+      return Object.assign({}, state, { limit: action.limit });
+    case constants.CHANGE_SECTION:
+      return Object.assign({}, state, { section: action.section });
 
     case constants.GET_ARTICLES_REQUEST:
-      return Object.assign({}, state, { fetching: { articles: true }, clearResults: action.clear, articleOffset: action.offset, selectedLimit: action.limit });
+      return Object.assign({}, state, { fetchingArticles: true, clear: action.clear, offset: action.offset, limit: action.limit });
     case constants.GET_ARTICLES_SUCCESS:
-      if(state.clearResults)
-        return Object.assign({}, state, { fetching: { articles: false }, articleOffset: state.selectedLimit, articles: action.articles });
+      if(state.clear)
+        return Object.assign({}, state, { fetchingArticles: false, offset: state.limit, articles: action.articles });
 
-      return Object.assign({}, state, { fetching: { articles: false }, articleOffset: Number(state.articleOffset) + Number(state.selectedLimit), articles: [...state.articles, ...action.articles] });
+      return Object.assign({}, state, { fetchingArticles: false, offset: state.offset + state.limit, articles: [...state.articles, ...action.articles] });
 
     case constants.GET_ARTICLES_FAILED:
-      return Object.assign({}, state, { fetching: { articles: false }, error: action.error });
+      return Object.assign({}, state, { error: action.error });
 
     case constants.GET_ARTICLE_REQUEST:
-      return Object.assign({}, state, { fetching: { article: true } });
+      return Object.assign({}, state, { fetchingArticle: true });
     case constants.GET_ARTICLE_SUCCESS:
-      return Object.assign({}, state, { fetching: { article: false }, article: action.article });
+      return Object.assign({}, state, { fetchingArticle: false, article: action.article });
     case constants.GET_ARTICLE_FAILED:
-      return Object.assign({}, state, { fetching: { article: false }, error: action.error });
+      return Object.assign({}, state, { fetchingArticle: false, error: action.error });
 
     case constants.GET_SECTIONS_REQUEST:
-      return Object.assign({}, state, { fetching: { sections: true } });
+      return Object.assign({}, state, { fetchingSections: true });
     case constants.GET_SECTIONS_SUCCESS:
-      return Object.assign({}, state, { fetching: { sections: false }, sections: action.sections });
+      return Object.assign({}, state, { fetchingSections: false, sections: action.sections });
     case constants.GET_SECTIONS_FAILED:
-      return Object.assign({}, state, { fetching: { sections: false }, error: action.error });
+      return Object.assign({}, state, { fetchingSections: false, error: action.error });
 
     default:
       return state;

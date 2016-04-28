@@ -23,7 +23,7 @@ export const fetch = ({ path, type, data }) => {
         resolve(JSON.parse(req.response));
       } else {
         console.log('reject 1');
-        reject(JSON.parse(req.response));
+        reject(req.response);
       }
     };
     req.onerror = function() {

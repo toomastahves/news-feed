@@ -14,15 +14,22 @@
 .article:first-child {
   margin-top: 50px;
 }
+
 @keyframes fadein {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+
 .article-title {
+  text-decoration: none;
   font-size: 1.6em;
   font-weight: bold;
   color: white;
   padding: 5%;
+}
+.article-title a {
+  text-decoration: none;
+  color: white;
 }
 
 .article-description {
@@ -102,6 +109,8 @@
     position: absolute;
     top: 0;
     left: 0;
+    width: 110px;
+    height: 110px;
   }
   .article-description-second {
     display: none !important;

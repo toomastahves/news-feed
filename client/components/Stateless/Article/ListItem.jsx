@@ -1,11 +1,9 @@
 import React, { PropTypes } from 'react';
 
-export const Article = ({ article, number }) => {
-
+export const ListItem = ({ article, number }) => {
   const image1 = article.landscapeImg ? { backgroundImage: `url('${article.landscapeImg}')` } : {};
   const image2 = article.portraitImg ? { backgroundImage: `url('${article.portraitImg}')` } : {};
   const type = number % 2 === 1 ? 'type1' : number % 4 !== 0 ? 'type2' : 'type3';
-
   const visibility = type === 'type3' ? { display: 'block' } : { display: 'none' };
 
   return (
@@ -14,7 +12,9 @@ export const Article = ({ article, number }) => {
         <div className='article-image' style={image1}>
         </div>
         <div className='article-text'>
-          <div className='article-title'>{article.headline}</div>
+          <div className='article-title'>
+            <a href={`#/article/${article.id}`}>{article.headline}</a>
+          </div>
           <div className='article-description-second' style={visibility}>{article.articleLead.replace(/<(?:.|\n)*?>/gm, '')}</div>
         </div>
       </div>
@@ -27,12 +27,11 @@ export const Article = ({ article, number }) => {
       </div>
     </div>
   );
-
 };
 
-Article.propTypes = {
+ListItem.propTypes = {
   article: PropTypes.object,
   number: PropTypes.number
 };
 
-export default Article;
+export default ListItem;
