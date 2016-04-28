@@ -3,18 +3,18 @@ import { getArticlesRequest } from '../actions/api';
 
 let executed = false;
 
-window.onscroll = function() {
+// Infinite scroll feature
+window.onscroll = () => {
+  // Checking if user has reached bottom of the page, so we can execute another XHR.
   if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
     if(!executed) {
-      console.log('bottom');
+      executed = true;
       const offset = store.getState().apiReducer.articleOffset;
       const limit = store.getState().apiReducer.selectedLimit;
       const section = store.getState().commonReducer.selectedSection;
       store.dispatch(getArticlesRequest(section, offset, limit, false));
-      executed = true;
-      setTimeout(() => {
-        executed = false;
-      }, 500);
+      // Preventing multiple XHR in short period of time.
+      setTimeout(() => (executed = false), 1000);
     }
   }
 };

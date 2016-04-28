@@ -139,7 +139,7 @@
   }
   .article-part1-type3 {
     order: 3;
-    flex-basis: 60%;
+    flex-basis: 100%;
     width: 70%;
   }
   .article-part2-type3 {
@@ -148,9 +148,7 @@
     width: 30%;
   }
   .article-part3-type3 {
-    order: 4;
-    flex-basis: 40%;
-    width: 70%;
+    display: none;
   }
   .article-part4-type3 {
     order: 1;
