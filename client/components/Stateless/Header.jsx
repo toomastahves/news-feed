@@ -12,7 +12,7 @@ export const Header = ({
           <SelectSection section={section} handleSectionChange={handleSectionChange} sections={sections} fetching={fetching} />
         </div>
       </div>
-      <a href='#/front'><div className='logo'></div></a>
+      <a href='#/landing'><div className='logo'></div></a>
       <div className='header-right'>
         <a href='https://www.facebook.com/postimees' target='_blank'><div className='facebook'></div></a>
         <a href='https://twitter.com/postimees' target='_blank'><div className='twitter'></div></a>
