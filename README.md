@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/toomastahves/news-feed.svg?branch=master)](https://travis-ci.org/toomastahves/news-feed)
-[![codecov.io](https://codecov.io/github/toomastahves/news-feed/coverage.svg?branch=master)](https://codecov.io/github/toomastahves/news-feed?branch=master)
+[![codecov](https://codecov.io/gh/toomastahves/news-feed/branch/master/graph/badge.svg)](https://codecov.io/gh/toomastahves/news-feed)
 [![Dependency Status](https://david-dm.org/toomastahves/news-feed.svg)](https://david-dm.org/toomastahves/news-feed)
 [![devDependency Status](https://david-dm.org/toomastahves/news-feed/dev-status.svg)](https://david-dm.org/toomastahves/news-feed#info=devDependencies)
 
@@ -13,10 +13,10 @@ http://localhost:1337/
 
 ---
 ### Functionality
-Fetches news data from Postimees API.
-Fetches article image, title and description.
-Infinite scroll fetches 3 articles per request.
-Fetches list of sections and allows to change section.
+Fetches news data from Postimees API.  
+Fetches article image, title and description.  
+Infinite scroll fetches 3 articles per request.  
+Fetches list of sections and allows to change section.  
 
 ---
 ### Issues
@@ -24,8 +24,8 @@ Description is sometimes too long and does not fit fixed height of article. Refa
 
 ---
 ### Todos
-Write more unit tests.
-Implement proper error handling.
-Add page for reading article content.
-List comments.
-Add authentication.
+Write more unit tests.  
+Implement proper error handling.  
+Add page for reading article content.  
+List comments.  
+Add authentication.  
