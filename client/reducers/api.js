@@ -1,6 +1,6 @@
 import * as constants from '../constants/api';
 
-const initialState = {
+export const initialState = {
   fetchingArticles: false,
   fetchingSections: false,
   articles: [],

@@ -1,27 +1,22 @@
 import { expect } from 'chai';
 import deepFreeze from 'deep-freeze';
 import { apiReducer } from 'client/reducers/api';
-import { GET_HOME_CONTENT_SUCCESS } from 'client/constants/';
+import { CHANGE_SECTION } from 'client/constants/api';
+import { initialState } from 'client/reducers/api';
 
 describe('reducers', () => {
   let stateBefore = {};
   beforeEach(() => {
-    stateBefore = {
-      fetching: true,
-      content: {}
-    };
+    stateBefore = initialState;
   });
 
   describe('tests helloReducer', () => {
-    it('SAY_HELLO', () => {
+    it('CHANGE_SECTION', () => {
       const action = {
-        type: GET_HOME_CONTENT_SUCCESS,
-        content: { message: 'Home content' }
+        type: CHANGE_SECTION,
+        section: 42
       };
-      const stateAfter = {
-        fetching: false,
-        content: { message: 'Home content' }
-      };
+      const stateAfter = Object.assign(stateBefore, { section: 42 });
       deepFreeze(action);
       deepFreeze(stateBefore);
       expect(apiReducer(stateBefore, action)).to.eql(stateAfter);

@@ -10,7 +10,6 @@ const setup = () => {
   return { output };
 };
 
-
 describe('tests App component', () => {
   it('renders correctly', () => {
     const { output } = setup();
