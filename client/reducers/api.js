@@ -3,11 +3,9 @@ import * as constants from '../constants/api';
 const initialState = {
   fetchingArticles: false,
   fetchingSections: false,
-  fetchingArticle: false,
   articles: [],
   sections: [],
   error: '',
-  article: {},
   offset: 0,
   limit: 1,
   section: 81,
@@ -17,8 +15,6 @@ const initialState = {
 export const apiReducer = (state = initialState, action) => {
   switch(action.type) {
 
-    case constants.CHANGE_LIMIT:
-      return Object.assign({}, state, { limit: action.limit });
     case constants.CHANGE_SECTION:
       return Object.assign({}, state, { section: action.section });
 
@@ -30,13 +26,6 @@ export const apiReducer = (state = initialState, action) => {
       return Object.assign({}, state, { fetchingArticles: false, offset: state.offset + state.limit, articles: [...state.articles, ...action.articles] });
     case constants.GET_ARTICLES_FAILED:
       return Object.assign({}, state, { error: action.error });
-
-    case constants.GET_ARTICLE_REQUEST:
-      return Object.assign({}, state, { fetchingArticle: true });
-    case constants.GET_ARTICLE_SUCCESS:
-      return Object.assign({}, state, { fetchingArticle: false, article: action.article });
-    case constants.GET_ARTICLE_FAILED:
-      return Object.assign({}, state, { fetchingArticle: false, error: action.error });
 
     case constants.GET_SECTIONS_REQUEST:
       return Object.assign({}, state, { fetchingSections: true });

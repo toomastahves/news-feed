@@ -1,16 +1,17 @@
-
-.heading {
+/*
+* Landing page layout styles.
+*/
+.landing {
   background-position: center;
   background-size: cover;
   background-image: url('/img/front.jpg');
   position: relative;
   height: 100vh;
-  max-height: 600px;
   display: flex;
   flex-direction: column-reverse;;
   align-items: center;
 }
-.heading-title {
+.landing-title {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -19,17 +20,43 @@
   font-weight: bold;
   font-size: 2em;
 }
-.heading-arrow {
-  margin-bottom: 10%;
+.landing-arrow {
+  margin-bottom: 5em;
 }
 
-@media (min-height: 600px) {
-  .heading {
-    max-height: none;
-  }
+/*
+* Styles for front-page button.
+*/
+.arrow-white-circle {
+  cursor: pointer;
+  animation: breathe 4s infinite;
+  background-color: white;
+  border-radius: 50%;
+  width: 7em;
+  height: 7em;
+  background-color: rgba(255, 255, 255, 0.7);
 }
-
-
+.arrow-blue-circle {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4.5em;
+  height: 4.5em;
+  border-radius: 50%;
+  background-color: #1ba6e2;
+}
+.arrow-wrapper {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('/img/arrow.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 1.3125em;
+  height: 0.8125em;
+}
 @keyframes breathe {
   0% {
     transform: scale(0.9);
@@ -43,34 +70,4 @@
     transform: scale(0.9);
     opacity: 0.9;
   }
-}
-.arrow-white-circle {
-  cursor: pointer;
-  animation: breathe 4s infinite;
-  background-color: white;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  background-color: rgba(255, 255, 255, 0.7);
-}
-.arrow-blue-circle {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #1ba6e2;
-}
-.arrow-wrapper {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-image: url('/img/arrow.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 21px;
-  height: 13px;
 }

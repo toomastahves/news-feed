@@ -1,10 +1,10 @@
 @import 'layout.css';
-@import 'menu.css';
-@import 'spinner.css';
+@import 'landing.css';
 @import 'header.css';
-@import 'front.css';
-@import 'circle.css';
 @import 'drawer.css';
+
 @import 'article.css';
+
+@import 'spinner.css';
+@import 'circle.css';
 @import 'footer.css';
-@import 'article.details.css'

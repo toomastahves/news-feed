@@ -9,18 +9,21 @@ export const ListItem = ({ article, number }) => {
   return (
     <div className={`article article-mobile article-${type}`}>
       <div className={`article-part1 article-part1-mobile article-part1-${type}`}>
-        <div className='article-image' style={image1}>
-        </div>
+        <div className='article-image' style={image1}></div>
         <div className='article-text'>
           <div className='article-title'>
-            <a href={`#/article/${article.id}`}>{article.headline}</a>
+            {article.headline}
           </div>
-          <div className='article-description-second' style={visibility}>{article.articleLead.replace(/<(?:.|\n)*?>/gm, '')}</div>
+          <div className='article-description-second' style={visibility}>
+            {article.articleLead.replace(/<(?:.|\n)*?>/gm, '')}
+          </div>
         </div>
       </div>
       <div className={`article-part2 article-part2-mobile article-part2-${type}`} style={image2}></div>
       <div className={`article-part3 article-part3-mobile article-part3-${type}`}>
-        <div className='article-description'>{article.articleLead.replace(/<(?:.|\n)*?>/gm, '')}</div>
+        <div className='article-description'>
+          {article.articleLead.replace(/<(?:.|\n)*?>/gm, '')}
+        </div>
       </div>
       <div className={`article-part4 article-part4-mobile article-part4-${type}`}>
         <div className='circle'><div className='circle-number'>{number}</div></div>

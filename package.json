@@ -1,7 +1,7 @@
 {
-  "name": "react-starter",
+  "name": "news-feed",
   "version": "0.0.1",
-  "description": "React starter",
+  "description": "Postimees news feed",
   "main": "index.js",
   "scripts": {
     "start": "nodemon server/index.js",
@@ -13,18 +13,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/toomastahves/react-starter.git"
+    "url": "git+https://github.com/toomastahves/news-feed.git"
   },
   "keywords": [],
   "author": "Toomas Tahves",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/toomastahves/react-starter/issues"
+    "url": "https://github.com/toomastahves/news-feed/issues"
   },
   "engines": {
     "node": "6.0"
   },
-  "homepage": "https://github.com/toomastahves/react-starter#readme",
+  "homepage": "https://github.com/toomastahves/news-feed#readme",
   "devDependencies": {
     "babel-eslint": "6.0.3",
     "chai": "3.5.0",

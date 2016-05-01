@@ -1,14 +1,31 @@
+/*
+* Header layout styles.
+*/
 .header {
   position: fixed;
-  padding: 5px 10px 0 10px;
-  height: 50px;
+  padding: 0.3125em 0.625em 0 0.625em;
+  height: 3.125em;
   display: flex;
   background-color: rgb(54, 165, 244);
   justify-content: space-between;
   width: 100%;
   z-index: 1;
 }
+.header-left {
+  display: flex;
+  flex-direction: row;
+}
+.header-right {
+  display: flex;
+  justify-content: flex-end;
+}
+.header-right * {
+  padding: 0 0.3125em 0 0.3125em;
+}
 
+/*
+* Hamburger icon.
+*/
 .hamburger {
   cursor: pointer;
   font-size: 1.6em;
@@ -19,72 +36,67 @@
   content: '☰';
 }
 
-.header-left {
-  display: flex;
-  flex-direction: row;
-}
-@media (max-width: 650px) {
-  .select-section {
-    display: none;
-  }
-}
-
+/*
+* Section selection drop-down.
+*/
 select {
-  width: 205px;
-  border: 1px solid rgba(88, 178, 242, 0.7);
-  padding: 8px;
+  width: 12.8125em;
+  border: 0.0625em solid rgba(88, 178, 242, 0.7);
+  padding: 0.6em;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: rgba(88, 178, 242, 0.7) url('/img/arrow.png') no-repeat 170px 10px;
+  background: rgba(88, 178, 242, 0.7) url('/img/arrow.png') no-repeat 10.625em 0.8em;
 }
 select option {
   font-size: 1.2em;
 }
 
+/*
+* Postimees logo.
+*/
 .logo {
   background-image: url('/img/logo.png');
   background-repeat: no-repeat;
   background-size: cover;
-  width: 168px;
-  height: 32px;
+  width: 10.5em;
+  height: 2em;
 }
 
-.share-icons {
-  display: flex;
-  justify-content: flex-end;
-}
-.share-icons * {
-  padding: 0 5px 0 5px;
-}
+/*
+* Share button styles.
+*/
 .share {
   background-image: url('/img/share.png');
-  width: 33px;
-  height: 36px;
+  width: 2.0625em;
+  height: 2.25em;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 0 10px 0 10px;
+  padding: 0 0.625em 0 0.625em;
   display: none;
   cursor: pointer;
 }
 .facebook {
   background-image: url('/img/facebook.png');
-  width: 41px;
-  height: 41px;
+  width: 2.5625em;
+  height: 2.5625em;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 0 10px 0 10px;
+  padding: 0 0.625em 0 0.625em;
 }
 .twitter {
   background-image: url('/img/twitter.png');
-  width: 41px;
-  height: 41px;
+  width: 2.5625em;
+  height: 2.5625em;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 0 10px 0 10px;
+  padding: 0 0.625em 0 0.625em;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 50em) {
+  .select-section {
+    display: none;
+  }
   .share {
     display: block;
   }

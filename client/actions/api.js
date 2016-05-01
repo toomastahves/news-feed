@@ -51,46 +51,6 @@ export const getArticlesFailed = (error) => {
 };
 
 /*
-* Get article by id request actions
-*/
-export const getArticleRequest = (id) => {
-  return {
-    type: actions.GET_ARTICLE_REQUEST,
-    id
-  };
-};
-export const getArticleSuccess = (article) => {
-  let mappedArticle = {};
-  if(article.thumbnail) {
-    mappedArticle = {
-      id: article.id,
-      headline: article.headline,
-      articleLead: article.articleLead[0].html,
-      articleBody: article.articleBody,
-      landscapeImg: article.thumbnail.sources.landscape.large,
-      portraitImg: article.thumbnail.sources.portrait.large
-    };
-  } else {
-    mappedArticle = {
-      id: article.id,
-      headline: article.headline,
-      articleBody: article.articleBody,
-      articleLead: article.articleLead[0].html
-    };
-  }
-  return {
-    type: actions.GET_ARTICLE_SUCCESS,
-    article: mappedArticle
-  };
-};
-export const getArticleFailed = (error) => {
-  return {
-    type: actions.GET_ARTICLE_FAILED,
-    error
-  };
-};
-
-/*
 * Get sections list request actions
 */
 export const getSectionsRequest = () => {
@@ -120,18 +80,11 @@ export const getSectionsFailed = (error) => {
 };
 
 /*
-* Change handlers for limit and section
+* Change handler for section
 */
 export const selectSection = (section) => {
   return {
     type: actions.CHANGE_SECTION,
     section
-  };
-};
-
-export const changeLimit = (limit) => {
-  return {
-    type: actions.CHANGE_SECTION,
-    limit
   };
 };

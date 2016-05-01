@@ -13,7 +13,7 @@ export const Header = ({
         </div>
       </div>
       <a href='#/front'><div className='logo'></div></a>
-      <div className='share-icons'>
+      <div className='header-right'>
         <a href='https://www.facebook.com/postimees' target='_blank'><div className='facebook'></div></a>
         <a href='https://twitter.com/postimees' target='_blank'><div className='twitter'></div></a>
         <div className='share'></div>

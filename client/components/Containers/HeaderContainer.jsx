@@ -11,8 +11,7 @@ export const HeaderContainer = ({ sections, fetching, section, dispatch, limit }
   };
   const handleSectionChange = (e) => {
     window.location.replace('#/articles');
-    if (window.scrollY)
-      window.scroll(0, 0);
+    window.scroll(0, 0);
 
     dispatch(getArticlesRequest({ section: Number(e.target.value), offset: 0, limit, clear: true }));
     dispatch(selectSection(Number(e.target.value)));
@@ -21,9 +20,8 @@ export const HeaderContainer = ({ sections, fetching, section, dispatch, limit }
       toggleDrawer();
   };
 
-  if(sections.length === 0) {
+  if(sections.length === 0)
     dispatch(getSectionsRequest());
-  }
 
   return (
     <div>

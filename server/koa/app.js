@@ -4,7 +4,7 @@ import favicon from 'koa-favicon';
 
 const app = koa();
 app.use(serve('public'));
-app.use(favicon('public/favicon.ico'));
+app.use(favicon('public/favicon.png'));
 
 app.on('error', (err, ctx) => {
   console.log('Server error', err, ctx);
