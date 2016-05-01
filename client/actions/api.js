@@ -13,17 +13,15 @@ export const getArticlesRequest = ({ section, offset, limit, clear }) => {
   };
 };
 export const getArticlesSuccess = (articles) => {
-
   const mappedArticles = [];
 
   for(const a of articles) {
     let mappedArticle = {};
-
     if(a.thumbnail) {
       mappedArticle = {
         id: a.id,
         headline: a.headline,
-        articleLead: a.articleLead[0].html,
+        articleLead: a.articleLead.length !== 0 ? a.articleLead[0].html : '',
         landscapeImg: a.thumbnail.sources.landscape.large,
         portraitImg: a.thumbnail.sources.portrait.large
       };
@@ -31,10 +29,9 @@ export const getArticlesSuccess = (articles) => {
       mappedArticle = {
         id: a.id,
         headline: a.headline,
-        articleLead: a.articleLead[0].html
+        articleLead: a.articleLead.length !== 0 ? a.articleLead[0].html : ''
       };
     }
-
     mappedArticles.push(mappedArticle);
   }
 

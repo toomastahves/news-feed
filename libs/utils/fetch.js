@@ -1,6 +1,6 @@
 import { API_URI } from '../../client/constants/api';
 
-export const fetch = ({ path, type, data }) => {
+export const fetch = ({ path, type }) => {
   const url = `${API_URI}${path}`;
   console.log(`${type} ${url}`);
 
@@ -8,7 +8,6 @@ export const fetch = ({ path, type, data }) => {
     const req = new XMLHttpRequest();
     req.open(type, url);
     req.withCredentials = true;
-    req.setRequestHeader('content-type', 'application/json');
     req.onload = function() {
       if(req.status === 200) {
         resolve(JSON.parse(req.response));

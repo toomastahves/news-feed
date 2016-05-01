@@ -1,10 +1,11 @@
 import React, { PropTypes } from 'react';
 
 export const ListItem = ({ article, number }) => {
+
   const image1 = article.landscapeImg ? { backgroundImage: `url('${article.landscapeImg}')` } : {};
   const image2 = article.portraitImg ? { backgroundImage: `url('${article.portraitImg}')` } : {};
+
   const type = number % 2 === 1 ? 'type1' : number % 4 !== 0 ? 'type2' : 'type3';
-  const visibility = type === 'type3' ? { display: 'block' } : { display: 'none' };
 
   return (
     <div className={`article article-mobile article-${type}`}>
@@ -14,9 +15,9 @@ export const ListItem = ({ article, number }) => {
           <div className='article-title'>
             {article.headline}
           </div>
-          <div className='article-description-second' style={visibility}>
+          {type === 'type3' && <div className='article-description article-description-hide'>
             {article.articleLead.replace(/<(?:.|\n)*?>/gm, '')}
-          </div>
+          </div>}
         </div>
       </div>
       <div className={`article-part2 article-part2-mobile article-part2-${type}`} style={image2}></div>
